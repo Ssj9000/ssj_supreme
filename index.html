@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal Portfolio Website </title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/32cd9c5be6.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <img src="360_F_266768379_7XndJ9iMvEgubaAA7PbRGcDljnw6HlIE.jpg" class="logo">
+                    <ul>
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li> 
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-text">
+                    <p> Software Developer</p>
+                    <h1>Hi, I'm <span>Sehajpreet</span><br> Singh From Mohali</h1>
+                </div>
+            </div>
+        </div>
+        <!--------about--------->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                <div class="about-col-1">
+                    <img src="WhatsApp_Image_2023-03-30_at_13.14.26-removebg-preview.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title>">About Me</h1>
+                    <P>Hi,My Name is Sehajpreet Singh and i am doing BCA from RAyat Bahra university,Sunstone Kharar and i am very fond of coding and learning
+                <div class="tab-titles">
+                    <p class="tab-titles active-link">Education</p>        
+                </div>
+                <div class="tab-contents">
+                    <ul>
+                        <li><span>Class10th</span><br>From ST. Xavier's High School Mohali,Sector 71</li>
+                        <li><span>Class12th</span><br>From Sharda Sarvhitkari,Sector 40D </li>
+                        <li><span>BCA</span><br>From Rayat Bahra University Sunstone</li>
+                    </ul>
+                </div>
+            </div>
+            <!----------------skills----------->
+            <div id="skills">
+                <div class="container"></div>
+                                <h1 class="sub-title">My Skills</h1>
+                                <div class ="skills-list">
+                                    <div>
+                                    <i class="fa-brands fa-github"></i>
+                                    <h2>Github</h2>
+                                    <p>It's an platform which allows you to code. In Github there are many commands like git init, git commit and git status ,git branch.</p>
+                                </div>
+                                <div>
+                                <i class="fa-solid fa-crop fa-beat-fade"></i>
+                                <h2>MongoDb</h2>
+                                <p>MongoDb is a document database and there are some commands of Mongo like show dbs,use Database_Name, db.dropDatabase(),show collection.</p>
+                                </div>
+                                <div>
+                                <i class="fa-brands fa-uncharted fa-beat-fade"></i>
+                                <h2>Web Development</h2>
+                                <p>The tasks associated with creating, building, and maintaining websites and web applications that run online on a browser using languages like HTML, CSS , Javascript.</p>
+                                </div>
+                             </div>
+                        </div>
+                        </div>
+
+
+
+
+        <!----------contact--------->
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <p><i class="fa-solid fa-paper-plane"></i>bca22.Sehajpreet.Singh@sunstone.edu.in</p>
+                        <p><i class="fa-solid fa-paper-plane"></i>9501470097 </p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/profile.php?id=100083695015845"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/in/sehajpreet-singh-a2b6b8270"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="https://instagram.com/seha.j9158?igshid=ZDdkNTZiNTM="><i class="fa-brands fa-instagram"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-right"></div>
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn">submit</button>
+                </form>     
+                <span id="msg"></span>
+        </div>
+        </div>
+    </div>
+
+ </div>
+</div>
+</div>
+
+    <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwFLyUDRY6kMM5NFTRKtHUFfZtLdEBf_9QpkuxiAj-b0PFlBzxKhWUvGiwkuC9ncsaR/exec'
+  const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response =>{
+        msg.innerHTML = "Message sent successfully"
+        setTimeout(function(){
+               msg.innerHTML=""
+        },5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+    
+
+</body>
+</html>
